@@ -40,7 +40,9 @@ const Test = () => {
 
     return (
         <div>
-            <h1>test page</h1>
+            <h1>Todo 2</h1>
+            <p >need to run npx json-server --watch data/db.json --port 8000 </p>
+            <p style={{paddingBottom: '10px'}}>make sure the directory is frontend first ヾ(≧▽≦*)/</p>
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {todos && todos.map((todo) => {

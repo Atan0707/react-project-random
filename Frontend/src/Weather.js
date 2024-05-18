@@ -2,12 +2,12 @@ import { useState } from 'react';
 import useFetch from './useFetch';
 
 const Weather = () => {
-    const [city, setCity] = useState('');
-    const [url, setUrl] = useState('');
+    const [city, setCity] = useState('Merlimau');
+    const [url, setUrl] = useState(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0077838c5dfb9b3df1fe49f6202fe45a`);
     const { data, isPending, error } = useFetch(url);
     var celcius = 0;
 
-    const searchWeather = () => {
+    const handleClick = () => {
         setUrl(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0077838c5dfb9b3df1fe49f6202fe45a`);
     }
 
@@ -19,7 +19,7 @@ const Weather = () => {
         <div className="weather">
             <h1>Weather app</h1>
             <input type="text" placeholder="Enter your city" required value={city} onChange={(e) => setCity(e.target.value)}/>
-            <button onClick={searchWeather}>Search</button>
+            <button onClick={handleClick}>Search</button>
 
             {/* For presenting the data */}
             {error && <div>{error}</div>}

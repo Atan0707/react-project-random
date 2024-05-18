@@ -4,6 +4,7 @@ import Home from './Home';
 import Todo from './todo';
 import Todo2 from './Test';
 import Weather from './Weather';
+import TestBackend from './TestBackend';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route path="/todo" element={<Todo />} />
           <Route path="/todo2" element={<Todo2 />} />
           <Route path="/weather" element={<Weather />} />
+          <Route path="*" element={<Home />} />
+          <Route path='/test-backend' element={<TestBackend />} />
         </Routes>
       </div>
     </Router>
