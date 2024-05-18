@@ -20,6 +20,9 @@ const Todo = () => {
 
   return (
     <div className="todo">
+
+      <p>This is my first try of todo list. But can delete but the data doesnt save on any databases ヽ（≧□≦）ノ</p>
+
       <div className="todo-preview">
         {todos.map((todo) => {
           return (
