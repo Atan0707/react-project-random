@@ -15,6 +15,7 @@ const TestBackend = () => {
     return (
         <div className="test-backend">
             <h1>Test Backend</h1>
+            <p>dont forget to run apache and mysql server first on xampp ♪(^∇^*)</p>
             <table>
                 <thead>
                     <th>ID</th>
