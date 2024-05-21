@@ -10,3 +10,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.form input {
+    margin: 10px;
+}
