@@ -5,3 +5,12 @@
 .test-backend tbody tr td {
     padding: 10px;
 }
+
+.test-backend p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form input {
+    margin: 10px;
+}
