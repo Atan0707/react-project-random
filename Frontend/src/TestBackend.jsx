@@ -3,6 +3,7 @@ import './backend.css';
 
 const TestBackend = () => {
 
+
     const [data, setData] = useState([]);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -36,6 +37,22 @@ const TestBackend = () => {
         .catch(err => console.log(err))
     }
 
+    const handleClick = (id) => {
+        fetch(`http://localhost:8081/user/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(console.log("deleted"))
+        .then(res => res.json())
+        .then(data => {
+            setData(prevData => prevData.filter(user => user.id !== id));
+            console.log('deleted')
+        })
+        .catch(err => console.error(err));
+    }
+
 
     return (
         <div className="test-backend">
@@ -49,14 +66,14 @@ const TestBackend = () => {
                     <th>Phone</th>
                     <th>Email</th>
                 </tr>
-</thead>
+            </thead>
                 <tbody>
                     {data.map((d, i) => (
                         <tr key={i}>
                             <td>{d.id}</td>
                             <td>{d.name}</td>
                             <td>{d.phone}</td>
-                            <td>{d.email}</td>
+                            <td>{d.email}</td><button onClick={() => handleClick(d.id)}>Delete</button>
                         </tr>
 
                     ))}
